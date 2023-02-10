@@ -18,7 +18,7 @@ struct WhiteButton: ButtonStyle {
             .padding(.vertical, 6.0)
             .padding(.horizontal, 180.0)
             .clipShape(Capsule())
-            .foregroundColor(.blue)
+            .foregroundColor(.black)
     }
 }
 
@@ -30,7 +30,7 @@ struct ContentView: View {
             
             // put @ bottom of screen, black on white text
             Button("Test Button") {
-                print("pressed")
+                print("Button Pressed")
             }
             .padding(.bottom)
             .buttonStyle(WhiteButton())
