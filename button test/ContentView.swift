@@ -22,6 +22,8 @@ struct WhiteButton: ButtonStyle {
     }
 }
 
+// add note storage (maybe cloud storage aswell)
+
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -36,7 +38,7 @@ struct ContentView: View {
             .buttonStyle(WhiteButton())
             .frame(height: 36)
             
-            
+            // add notebox
             TextField("Note", text:note).focused(NoteFieldFocused)
         }
         .padding()
