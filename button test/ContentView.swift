@@ -37,7 +37,7 @@ struct ContentView: View {
             .frame(height: 36)
             
             
-            TextField("Note", text:$note).focused($NoteFieldFocused)
+            TextField("Note", text:note).focused(NoteFieldFocused)
         }
         .padding()
     }
