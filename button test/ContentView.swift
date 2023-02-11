@@ -8,8 +8,6 @@
 import SwiftUI
 import UIKit
 
-var note: String = ""
-var NoteFieldFocused: Bool = false
 
 // Round ButtonStyle
 struct WhiteButton: ButtonStyle {
@@ -23,6 +21,10 @@ struct WhiteButton: ButtonStyle {
 }
 
 struct ContentView: View {
+    @State var note: String = ""
+    @FocusState var NoteFieldFocused: Bool
+
+    
     var body: some View {
         VStack {
                         
@@ -37,7 +39,7 @@ struct ContentView: View {
             .frame(height: 36)
             
             
-            TextField("Note", text:note).focused(NoteFieldFocused)
+            TextField("Note", text:$note).focused($NoteFieldFocused )
         }
         .padding()
     }
