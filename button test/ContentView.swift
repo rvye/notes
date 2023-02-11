@@ -40,7 +40,7 @@ struct ContentView: View {
             .buttonStyle(WhiteButton())
             .frame(height: 36)
             
-            
+            // add note saving
             TextField("Note", text:$note).focused($NoteFieldFocused )
         }
         .padding()
