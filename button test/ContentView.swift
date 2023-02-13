@@ -5,6 +5,11 @@
 //  Created by k on 2/8/23.
 //
 
+// TODO
+// 
+// - Add note storage ( local or cloud )
+// - Figure out how to move buttons, or text boxes
+
 import SwiftUI
 import UIKit
 
@@ -20,7 +25,6 @@ struct WhiteButton: ButtonStyle {
     }
 }
 
-// add note storage (maybe cloud storage aswell)
 
 struct ContentView: View {
     @State var note: String = ""
@@ -30,9 +34,6 @@ struct ContentView: View {
     var body: some View {
         VStack {
                         
-            // test button
-            
-            // put @ bottom of screen, black on white text
             Button("Test Button") {
                 print("Button Pressed")
             }
@@ -40,7 +41,6 @@ struct ContentView: View {
             .buttonStyle(WhiteButton())
             .frame(height: 36)
             
-            // add note saving
             TextField("Note", text:$note).focused($NoteFieldFocused )
         }
         .padding()
