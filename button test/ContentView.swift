@@ -5,8 +5,8 @@
 
 // TODO
 // 
-// - Add note storage ( local or cloud )
-// - Figure out how to move buttons, or text boxes
+// Add note storage ( local or cloud )
+// Figure out how to move buttons, or text boxes
 
 import SwiftUI
 import UIKit
