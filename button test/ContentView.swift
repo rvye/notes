@@ -4,7 +4,6 @@
 //
 
 // TODO
-// 
 // Add note storage ( local or cloud )
 // Figure out how to move buttons, or text boxes
 
