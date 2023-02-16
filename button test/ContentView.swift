@@ -45,7 +45,6 @@ struct ContentView: View {
             
             TextField("Note", text:$note).focused($NoteFieldFocused)
             
-            // add note saving
             TextField("Note", text: $note)
                 .focused($NoteFieldFocused)
                 
