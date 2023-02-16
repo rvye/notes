@@ -23,8 +23,13 @@ struct WhiteButton: ButtonStyle {
 }
 
 
+func save(_ note: String) {
+    print(note)
+    
+}
+
 struct ContentView: View {
-    @State var note: String = ""
+    @State private var note: String = ""
     @FocusState var NoteFieldFocused: Bool
 
     
@@ -38,7 +43,15 @@ struct ContentView: View {
             .buttonStyle(WhiteButton())
             .frame(height: 36)
             
-            TextField("Note", text:$note).focused($NoteFieldFocused )
+            TextField("Note", text:$note).focused($NoteFieldFocused)
+            
+            // add note saving
+            TextField("Note", text: $note)
+                .focused($NoteFieldFocused)
+                
+                .onChange(of: note) {note in
+                    save(note)
+                }
         }
         .padding()
     }
