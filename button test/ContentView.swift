@@ -2,10 +2,8 @@
 //  ContentView.swift
 //  button test
 //
-
-// TODO
-// Add note storage ( local or cloud )
-// Figure out how to move buttons, or text boxes
+//  Created by k on 2/8/23
+//
 
 import SwiftUI
 import UIKit
@@ -21,7 +19,6 @@ struct WhiteButton: ButtonStyle {
     }
 }
 
-
 func save(_ note: String) {
     print(note)
 }
@@ -30,7 +27,6 @@ struct ContentView: View {
     // Variables, used in TextField
     @State private var note: String = ""
     @FocusState var NoteFieldFocused: Bool
-
     
     var body: some View {
         VStack {     
