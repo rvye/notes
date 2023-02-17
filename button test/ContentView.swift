@@ -42,8 +42,6 @@ struct ContentView: View {
             .frame(height: 36)
             
             // Main TextField
-            TextField("Note", text:$note).focused($NoteFieldFocused)
-            
             TextField("Note", text: $note)
                 .focused($NoteFieldFocused)
                 
