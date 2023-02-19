@@ -13,7 +13,7 @@ struct WhiteButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(.vertical, 6.0)
-            .padding(.horizontal, 180.0)
+            .padding(.horizontal, 150)
             .clipShape(Capsule())
             .foregroundColor(.black)
     }
