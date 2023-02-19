@@ -28,6 +28,7 @@ struct ContentView: View {
     @State private var note: String = ""
     @FocusState var NoteFieldFocused: Bool
     
+    // Main view, displayed onscreen.
     var body: some View {
         VStack {     
             Button("Test Button") {
