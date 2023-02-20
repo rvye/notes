@@ -1,4 +1,4 @@
-// UI.swift
+// ContentView.swift
 // notes
 
 // For testing ui, no actual functionality
