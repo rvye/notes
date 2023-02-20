@@ -1,12 +1,14 @@
 //
 //  ContentView.swift
-//  button test
+//  notes
 //
 //  Created by k on 2/8/23
 //
 
 import SwiftUI
 import UIKit
+import CoreData
+
 
 // Round ButtonStyle
 struct WhiteButton: ButtonStyle {
@@ -15,12 +17,22 @@ struct WhiteButton: ButtonStyle {
             .padding(.vertical, 6.0)
             .padding(.horizontal, 150)
             .clipShape(Capsule())
-            .foregroundColor(.black)
+            .foregroundColor(.white)
     }
 }
 
+func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    return paths[0]
+}
+
+
 func save(_ note: String) {
-    print(note)
+    let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
+
+    do {
+        try note.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
+    } catch {}
 }
 
 struct ContentView: View {
@@ -32,7 +44,7 @@ struct ContentView: View {
     var body: some View {
         VStack {     
             Button("Test Button") {
-                print("Button Pressed")
+                print("Application directory: \(NSHomeDirectory())")
             }
             .padding(.bottom)
             .buttonStyle(WhiteButton())

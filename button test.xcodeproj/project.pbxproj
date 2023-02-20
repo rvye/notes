@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EFF7D19429945A2900419593 /* button_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF7D19329945A2900419593 /* button_testApp.swift */; };
+		EFF7D19429945A2900419593 /* notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF7D19329945A2900419593 /* notes.swift */; };
 		EFF7D19629945A2900419593 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF7D19529945A2900419593 /* ContentView.swift */; };
 		EFF7D19829945A2B00419593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF7D19729945A2B00419593 /* Assets.xcassets */; };
 		EFF7D19B29945A2B00419593 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF7D19A29945A2B00419593 /* Preview Assets.xcassets */; };
-		EFF7D1A529945A2B00419593 /* button_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF7D1A429945A2B00419593 /* button_testTests.swift */; };
-		EFF7D1AF29945A2B00419593 /* button_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF7D1AE29945A2B00419593 /* button_testUITests.swift */; };
-		EFF7D1B129945A2B00419593 /* button_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF7D1B029945A2B00419593 /* button_testUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,15 +32,12 @@
 
 /* Begin PBXFileReference section */
 		EFF7D19029945A2900419593 /* button test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "button test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFF7D19329945A2900419593 /* button_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button_testApp.swift; sourceTree = "<group>"; };
+		EFF7D19329945A2900419593 /* notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notes.swift; sourceTree = "<group>"; };
 		EFF7D19529945A2900419593 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFF7D19729945A2B00419593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFF7D19A29945A2B00419593 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFF7D1A029945A2B00419593 /* button testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "button testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFF7D1A429945A2B00419593 /* button_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button_testTests.swift; sourceTree = "<group>"; };
 		EFF7D1AA29945A2B00419593 /* button testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "button testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFF7D1AE29945A2B00419593 /* button_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button_testUITests.swift; sourceTree = "<group>"; };
-		EFF7D1B029945A2B00419593 /* button_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +68,7 @@
 		EFF7D18729945A2800419593 = {
 			isa = PBXGroup;
 			children = (
-				EFF7D19229945A2900419593 /* button test */,
-				EFF7D1A329945A2B00419593 /* button testTests */,
-				EFF7D1AD29945A2B00419593 /* button testUITests */,
+				EFF7D19229945A2900419593 /* notes */,
 				EFF7D19129945A2900419593 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,15 +83,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EFF7D19229945A2900419593 /* button test */ = {
+		EFF7D19229945A2900419593 /* notes */ = {
 			isa = PBXGroup;
 			children = (
-				EFF7D19329945A2900419593 /* button_testApp.swift */,
+				EFF7D19329945A2900419593 /* notes.swift */,
 				EFF7D19529945A2900419593 /* ContentView.swift */,
 				EFF7D19729945A2B00419593 /* Assets.xcassets */,
 				EFF7D19929945A2B00419593 /* Preview Content */,
 			);
-			path = "button test";
+			path = notes;
 			sourceTree = "<group>";
 		};
 		EFF7D19929945A2B00419593 /* Preview Content */ = {
@@ -108,23 +100,6 @@
 				EFF7D19A29945A2B00419593 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		EFF7D1A329945A2B00419593 /* button testTests */ = {
-			isa = PBXGroup;
-			children = (
-				EFF7D1A429945A2B00419593 /* button_testTests.swift */,
-			);
-			path = "button testTests";
-			sourceTree = "<group>";
-		};
-		EFF7D1AD29945A2B00419593 /* button testUITests */ = {
-			isa = PBXGroup;
-			children = (
-				EFF7D1AE29945A2B00419593 /* button_testUITests.swift */,
-				EFF7D1B029945A2B00419593 /* button_testUITestsLaunchTests.swift */,
-			);
-			path = "button testUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFF7D19629945A2900419593 /* ContentView.swift in Sources */,
-				EFF7D19429945A2900419593 /* button_testApp.swift in Sources */,
+				EFF7D19429945A2900419593 /* notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF7D1A529945A2B00419593 /* button_testTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF7D1B129945A2B00419593 /* button_testUITestsLaunchTests.swift in Sources */,
-				EFF7D1AF29945A2B00419593 /* button_testUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,9 +388,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"button test/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "notes/Preview\\ Content/Preview\\ Assets.xcassets notes/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Notes;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,9 +418,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"button test/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "notes/Preview\\ Content/Preview\\ Assets.xcassets notes/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Notes;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
