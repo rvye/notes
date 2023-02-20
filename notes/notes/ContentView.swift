@@ -53,6 +53,8 @@ struct ContentView: View {
             .frame(height: 36)
 
             // Main TextField
+            
+            // Errors begin & end here.
             TextEditor(text: $contents).onChange(of: $contents, perform: save(contents))
         }
     }
