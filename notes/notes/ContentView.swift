@@ -53,7 +53,7 @@ struct ContentView: View {
             .frame(height: 36)
 
             // Main TextField
-            TextEditor(text: $contents)
+            TextEditor(text: $contents).onChange(of: $contents, perform: save(contents))
         }
     }
 }
