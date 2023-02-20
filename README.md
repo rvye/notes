@@ -1,5 +1,4 @@
-#### This branch is for
-#### UI testing ONLY, no actual functionality
+#### This branch is for UI testing ONLY, no actual functionality
 
 # notes
 
