@@ -9,6 +9,14 @@ import SwiftUI
 import UIKit
 import CoreData
 
+// reading from file
+func readfile() {
+    let file = getDocumentsDirectory().appendingPathComponent("output.txt")
+    let contents = try! String(contentsOfFile: file)
+
+    print(contents)
+}
+
 
 // Round ButtonStyle
 struct WhiteButton: ButtonStyle {
