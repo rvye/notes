@@ -1,20 +1,16 @@
-//
 //  ContentView.swift
 //  notes
 //
 //  Created by k on 2/8/23
-//
 
 import SwiftUI
 import UIKit
 import CoreData
 
-// reading from file
+// Read from file
 let file = getDocumentsDirectory().appendingPathComponent("output.txt")
 let fn = file.path()
 let contents = try! String(contentsOfFile: fn)
-
-
 
 // Round ButtonStyle
 struct WhiteButton: ButtonStyle {
@@ -31,7 +27,6 @@ func getDocumentsDirectory() -> URL {
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return paths[0]
 }
-
 
 func save(_ note: String) {
     let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
@@ -63,6 +58,7 @@ struct ContentView: View {
             
                 .onChange(of: note) {note in
                     save(note)
+                // Would've thought this would edit the text in the TextField, but I guess I'm wrong
                 .text(contents)
                 }
         }
