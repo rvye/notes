@@ -3,7 +3,6 @@
 //  notes
 //
 //  Created by k on 2/8/23.
-//
 
 import SwiftUI
 
