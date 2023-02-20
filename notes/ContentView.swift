@@ -1,6 +1,8 @@
 //  ContentView.swift
 //  notes
-
+//
+//  made by @rvye
+//
 import SwiftUI
 import UIKit
 import CoreData
