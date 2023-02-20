@@ -10,12 +10,10 @@ import UIKit
 import CoreData
 
 // reading from file
-func readfile() {
-    let file = getDocumentsDirectory().appendingPathComponent("output.txt")
-    let contents = try! String(contentsOfFile: file)
+let file = getDocumentsDirectory().appendingPathComponent("output.txt")
+let fn = file.path()
+let contents = try! String(contentsOfFile: fn)
 
-    print(contents)
-}
 
 
 // Round ButtonStyle
@@ -50,10 +48,11 @@ struct ContentView: View {
     
     // Main view, displayed onscreen.
     var body: some View {
-        VStack {     
+        VStack {
             Button("Test Button") {
                 print("Application directory: \(NSHomeDirectory())")
             }
+            
             .padding(.bottom)
             .buttonStyle(WhiteButton())
             .frame(height: 36)
@@ -61,9 +60,10 @@ struct ContentView: View {
             // Main TextField
             TextField("Note", text: $note)
                 .focused($NoteFieldFocused)
-                
+            
                 .onChange(of: note) {note in
                     save(note)
+                .text(contents)
                 }
         }
     }
