@@ -1,69 +1,65 @@
 //  ContentView.swift
- //  notes
- import SwiftUI
- import UIKit
- import CoreData
+//  notes
 
- // Read from file
- let file = getDocumentsDirectory().appendingPathComponent("output.txt")
- let fn = file.path()
- let contents = try! String(contentsOfFile: fn)
+import SwiftUI
+import UIKit
+import CoreData
+import Foundation
 
- // Round ButtonStyle
- struct WhiteButton: ButtonStyle {
-     func makeBody(configuration: Configuration) -> some View {
-         configuration.label
-             .padding(.vertical, 6.0)
-             .padding(.horizontal, 150)
-             .clipShape(Capsule())
-             .foregroundColor(.white)
-     }
- }
+// Read from file
+let file = getDocumentsDirectory().appendingPathComponent("output.txt")
+let fn = file.path()
 
- func getDocumentsDirectory() -> URL {
-     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-     return paths[0]
- }
+// Round ButtonStyle
+struct WhiteButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(.vertical, 6.0)
+            .padding(.horizontal, 150)
+            .clipShape(Capsule())
+            .foregroundColor(.white)
+    }
+}
 
- func save(_ note: String) {
-     let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
+func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask)
+    return paths[0]
+}
 
-     do {
-         try note.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-     } catch {}
- }
+func save(_ note: String) {
+    let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
 
- struct ContentView: View {
-     // Variables, used in TextField
-     @State private var note: String = ""
-     @FocusState var NoteFieldFocused: Bool
+    do {
+        try note.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
+    } catch {}
+}
 
-     // Main view, displayed onscreen.
-     var body: some View {
-         VStack {
-             Button("Test Button") {
-                 print("Application directory: \(NSHomeDirectory())")
-             }
+struct ContentView: View {
+    // Variables, used in TextField
+    @State var contents = try! String(contentsOfFile: fn)
+    @State private var note: String = ""
+    @FocusState var NoteFieldFocused: Bool
 
-             .padding(.bottom)
-             .buttonStyle(WhiteButton())
-             .frame(height: 36)
+    // Main view, displayed onscreen.
+    var body: some View {
+        VStack {
+            Button("Test Button") {
+                // print("Application directory: \(NSHomeDirectory())")
+                // FileManager.default.createFile(atPath: fn, contents: nil, attributes: nil)
+            }
 
-             // Main TextField
-             TextField("Note", text: $note)
-                 .focused($NoteFieldFocused)
+            .padding(.bottom)
+            .buttonStyle(WhiteButton())
+            .frame(height: 36)
 
-                 .onChange(of: note) {note in
-                     save(note)
-                 // Would've thought this would edit the text in the TextField, but I guess I'm wrong
-                 .text(contents)
-                 }
-         }
-     }
- }
+            // Main TextField
+            TextEditor(text: $contents)
+        }
+    }
+}
 
- struct ContentView_Previews: PreviewProvider {
-     static var previews: some View {
-         ContentView()
-     }
- }
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
