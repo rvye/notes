@@ -1,3 +1,6 @@
+#### This branch is for
+#### UI testing ONLY, no actual functionality
+
 # notes
 
 - A Look-alike copy of the default Notes app on iOS
