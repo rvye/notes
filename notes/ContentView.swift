@@ -1,18 +1,10 @@
-//  ContentView.swift
-//  notes
-//
-//  Created by k on 2/8/23
+// UI.swift
+// notes
 
+// For testing ui, no actual functionality
 import SwiftUI
 import UIKit
-import CoreData
 
-// Read from file
-let file = getDocumentsDirectory().appendingPathComponent("output.txt")
-let fn = file.path()
-let contents = try! String(contentsOfFile: fn)
-
-// Round ButtonStyle
 struct WhiteButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -23,50 +15,25 @@ struct WhiteButton: ButtonStyle {
     }
 }
 
-func getDocumentsDirectory() -> URL {
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    return paths[0]
-}
-
-func save(_ note: String) {
-    let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
-
-    do {
-        try note.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-    } catch {}
-}
-
-struct ContentView: View {
-    // Variables, used in TextField
-    @State private var note: String = ""
-    @FocusState var NoteFieldFocused: Bool
-    
-    // Main view, displayed onscreen.
-    var body: some View {
-        VStack {
-            Button("Test Button") {
-                print("Application directory: \(NSHomeDirectory())")
-            }
-            
-            .padding(.bottom)
-            .buttonStyle(WhiteButton())
-            .frame(height: 36)
-            
-            // Main TextField
-            TextField("Note", text: $note)
-                .focused($NoteFieldFocused)
-            
-                .onChange(of: note) {note in
-                    save(note)
-                // Would've thought this would edit the text in the TextField, but I guess I'm wrong
-                .text(contents)
-                }
-        }
+struct ContentView : View {
+  var body: some View {
+    VStack {
+      Button("button") {
+        print("button pressed")
+      }
+      
+      .padding(.bottom)
+      .buttonStyle(WhiteButton())
+      .frame(height: 36)
+      
+      TextField("Note")
     }
+  }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
