@@ -5,6 +5,7 @@ import SwiftUI
 import UIKit
 import CoreData
 import Foundation
+import Darwin
 
 // Read from file
 let file = getDocumentsDirectory().appendingPathComponent("output.txt")
@@ -17,8 +18,17 @@ struct WhiteButton: ButtonStyle {
             .padding(.vertical, 6.0)
             .padding(.horizontal, 150)
             .clipShape(Capsule())
-            .foregroundColor(.white)
+            .foregroundColor(.yellow)
     }
+}
+
+func openNote() {
+    FileManager.default.createFile(atPath: fn, contents: nil, attributes: nil)
+    
+    @State var contents = try! String(contentsOfFile: fn)
+    
+    TextEditor(text: $contents)
+    
 }
 
 func getDocumentsDirectory() -> URL {
@@ -36,16 +46,18 @@ func save(_ note: String) {
 
 struct ContentView: View {
     // Variables, used in TextField
-    @State var contents = try! String(contentsOfFile: fn)
     @State private var note: String = ""
     @FocusState var NoteFieldFocused: Bool
 
     // Main view, displayed onscreen.
     var body: some View {
         VStack {
-            Button("Test Button") {
-                // print("Application directory: \(NSHomeDirectory())")
-                // FileManager.default.createFile(atPath: fn, contents: nil, attributes: nil)
+            Button("Open Note") {
+                openNote()
+                body.hidden()
+            }
+                
+                
             }
 
             .padding(.bottom)
@@ -53,10 +65,10 @@ struct ContentView: View {
             .frame(height: 36)
 
             // Main TextField
-            TextEditor(text: $contents).onChange(of: $contents, perform: save(contents))
+            
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
