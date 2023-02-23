@@ -1,4 +1,4 @@
-#### This branch is for UI testing ONLY, no actual functionality
+#### EOL, as my laptop screen broke.
 
 # notes
 
