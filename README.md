@@ -1,5 +1,3 @@
-#### EOL, as my laptop screen broke.
-
 # notes
 
 - A Look-alike copy of the default Notes app on iOS
