@@ -25,10 +25,7 @@ struct WhiteButton: ButtonStyle {
 func openNote() {
     FileManager.default.createFile(atPath: fn, contents: nil, attributes: nil)
     
-    @State var contents = try! String(contentsOfFile: fn)
-    
-    TextEditor(text: $contents)
-    
+    NoteView()
 }
 
 func getDocumentsDirectory() -> URL {
@@ -44,6 +41,17 @@ func save(_ note: String) {
     } catch {}
 }
 
+struct NoteView: View {
+    @State var contents = try! String(contentsOfFile: fn)
+    
+    var body: some View{
+        VStack {
+            
+            TextEditor(text: $contents)
+        }
+    }
+}
+
 struct ContentView: View {
     // Variables, used in TextField
     @State private var note: String = ""
@@ -53,7 +61,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button("Open Note") {
-                openNote()
+                NoteView()
                 body.hidden()
             }
                 
