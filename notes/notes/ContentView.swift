@@ -24,7 +24,7 @@ struct WhiteButton: ButtonStyle {
 
 func openNote() {
     FileManager.default.createFile(atPath: fn, contents: nil, attributes: nil)
-    
+
     NoteView()
 }
 
@@ -43,10 +43,10 @@ func save(_ note: String) {
 
 struct NoteView: View {
     @State var contents = try! String(contentsOfFile: fn)
-    
+
     var body: some View{
         VStack {
-            
+
             TextEditor(text: $contents)
         }
     }
@@ -64,8 +64,8 @@ struct ContentView: View {
                 NoteView()
                 body.hidden()
             }
-                
-                
+
+
             }
 
             .padding(.bottom)
@@ -73,7 +73,7 @@ struct ContentView: View {
             .frame(height: 36)
 
             // Main TextField
-            
+
         }
     }
 
