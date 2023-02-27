@@ -2,12 +2,8 @@
 //  notes
 
 // UI Testing ONLY
-
 import SwiftUI
 import UIKit
-import CoreData
-import Foundation
-import Darwin
 
 // Round ButtonStyle
 struct WhiteButton: ButtonStyle {
@@ -29,23 +25,13 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button("Open Note") {
-                openNote()
-                body.hidden()
             }
-                
-                
             }
-
             .padding(.bottom)
             .buttonStyle(WhiteButton())
             .frame(height: 36)
-
-            // Main TextField
-            
         }
     }
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
