@@ -1,15 +1,13 @@
 //  ContentView.swift
 //  notes
 
+// UI Testing ONLY
+
 import SwiftUI
 import UIKit
 import CoreData
 import Foundation
 import Darwin
-
-// Read from file
-let file = getDocumentsDirectory().appendingPathComponent("output.txt")
-let fn = file.path()
 
 // Round ButtonStyle
 struct WhiteButton: ButtonStyle {
@@ -22,36 +20,6 @@ struct WhiteButton: ButtonStyle {
     }
 }
 
-func openNote() {
-    FileManager.default.createFile(atPath: fn, contents: nil, attributes: nil)
-
-    NoteView()
-}
-
-func getDocumentsDirectory() -> URL {
-    let paths = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask)
-    return paths[0]
-}
-
-func save(_ note: String) {
-    let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
-
-    do {
-        try note.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-    } catch {}
-}
-
-struct NoteView: View {
-    @State var contents = try! String(contentsOfFile: fn)
-
-    var body: some View{
-        VStack {
-
-            TextEditor(text: $contents)
-        }
-    }
-}
-
 struct ContentView: View {
     // Variables, used in TextField
     @State private var note: String = ""
@@ -61,11 +29,11 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button("Open Note") {
-                NoteView()
+                openNote()
                 body.hidden()
             }
-
-
+                
+                
             }
 
             .padding(.bottom)
@@ -73,7 +41,7 @@ struct ContentView: View {
             .frame(height: 36)
 
             // Main TextField
-
+            
         }
     }
 
