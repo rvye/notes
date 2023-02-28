@@ -21,31 +21,46 @@ struct ContentView: View {
 
     // Main view, displayed onscreen.
     var body: some View {
-        VStack {
-            Button("Open Note") {
-            }
-            }
-            .padding(.bottom)
-            .buttonStyle(PlainButtonStyle())
-            .frame(height: 36)
+        VStack{}
 
-            Text("Note").font(.custom("Inter Regular", size: 24))
-            
+            Text("Note")
+              .font(Font.custom("Inter-Regular", size: 24))
+              .foregroundColor(Color.black)
+              .frame(minWidth: 56.00, minHeight: 27.00, alignment: .topLeading)
+              .position(x: 187, y: 16)
+        
             // Back text
-            Text("Back").font(.custom("Inter Regular", size: 24))
+            Text("Back")
+            .font(Font.custom("Inter-Regular", size: 24))
+            .foregroundColor(Color.black)
+            .frame(minWidth: 76.00, minHeight: 30.00, alignment: .topLeading)
+            .position(x: 19, y: 16)
 
+
+        
+            
             // Edit text
-            Text("Edit").font(.custom("Inter Regular", size: 16)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+            Text("Edit")
+              .font(Font.custom("Inter-Regular", size: 16))
+              .foregroundColor(Color.white)
+              .frame(minWidth: 39.00, minHeight: 23.00, alignment: .topLeading)
+              .position(x: 360, y: 873)
+
             
             // Edit button
-            Circle()
-	        .fill(Color(#colorLiteral(red: 0.4749999940395355, green: 0.4749999940395355, blue: 0.4749999940395355, alpha: 1)))
-            .frame(width: 55, height: 55)
 
             // Menu bar, bar
             Rectangle()
-	        .fill(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
-            .frame(width: 430, height: 1)
+              .fill(Color.black)
+              .frame(width: 430.00, height: 1.00)
+              .position(x: 0, y: 61)
+        
+            Ellipse()
+            .fill(Color(red: 1.00, green: 0.00  , blue: 0.00))
+              .frame(width: 55.00, height: 55.00)
+              .position(x: 347, y: 855)
+
+
         }
     }
 struct ContentView_Previews: PreviewProvider {
